@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arijewel · Panel de reservas</title>
+<style>
+body{margin:0;background:#fbf1e4;color:#4e3b2a;font-family:Arial,sans-serif}.wrap{max-width:1100px;margin:auto;padding:30px 18px}h1{font-family:Georgia,serif;color:#5a3a20}.box{background:#fffaf4;border:1px solid #e5c9a5;border-radius:18px;padding:20px;margin-bottom:18px}input,button,select{padding:11px;border-radius:9px;border:1px solid #d9bd99}button{cursor:pointer;background:#b27a32;color:white;border:0}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.booking{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid #ead6bc;font-size:13px}.pending{color:#a36a1f}.confirmed{color:#2e7d4f}.cancelled{color:#9b3b35}@media(max-width:800px){.booking{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body><div class="wrap">
+<h1>arijewel · Panel de reservas</h1>
+<div class="box"><div class="row"><input id="key" type="password" placeholder="Clave de administrador"><button onclick="load()">Entrar</button></div><p style="font-size:12px">Por defecto, la clave local es <b>arijewel-admin</b>. En producción cambia ADMIN_KEY.</p></div>
+<div class="box"><div id="list">Introduce la clave para ver las reservas.</div></div>
+</div>
+<script>
+async function load(){
+ const key=document.getElementById("key").value;
+ const r=await fetch("/api/admin/bookings",{headers:{"x-admin-key":key}});
+ const data=await r.json(); if(!r.ok){document.getElementById("list").textContent=data.error;return}
+ window.ADMINKEY=key;
+ if(!data.length){document.getElementById("list").textContent="No hay reservas.";return}
+ document.getElementById("list").innerHTML=data.map(b=>`
+ <div class="booking">
+ <div><b>${b.name}</b><br><small>${b.phone}</small></div>
+ <div>${b.service_name}<br><b>S/ ${b.price}</b><br><small>Separación: S/ ${b.deposit_amount}</small></div>
+ <div>📅 ${b.date}<br>⏰ ${b.time}</div>
+ <div>${b.mode}<br><span class="${b.status}">${b.status}</span><br><small>Pago: ${b.payment_status}</small></div>
+ <div>
+ <select onchange="status(${b.id},this.value)">
+ <option ${b.status==="pending"?"selected":""}>pending</option>
+ <option ${b.status==="confirmed"?"selected":""}>confirmed</option>
+ <option ${b.status==="cancelled"?"selected":""}>cancelled</option>
+ <option ${b.status==="completed"?"selected":""}>completed</option>
+ </select>
+ </div>
+ </div>`).join("");
+}
+async function status(id,value){
+ await fetch("/api/admin/bookings/"+id,{method:"PATCH",headers:{"Content-Type":"application/json","x-admin-key":window.ADMINKEY},body:JSON.stringify({status:value})});
+ load();
+}
+</script>
+</body></html>

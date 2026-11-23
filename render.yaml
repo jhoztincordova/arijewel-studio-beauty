@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: arijewel-studio-beauty
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: ADMIN_KEY
+        sync: false
+      - key: CULQI_PUBLIC_KEY
+        sync: false
+      - key: CULQI_PRIVATE_KEY
+        sync: false
+      - key: BASE_URL
+        sync: false

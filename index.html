@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>arijewel · Studio Beauty</title>
+  <meta name="description" content="Arijewel Studio Beauty — menú facial, servicios de cosmiatría y reservas online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    :root{--cream:#fbf1e4;--paper:#fffaf4;--gold:#b27a32;--gold2:#d39a4b;--brown:#5a3a20;--text:#4e3b2a;--muted:#7b6652;--line:#e5c9a5;--shadow:0 20px 55px rgba(83,52,25,.14)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--text);font-family:Montserrat,Arial,sans-serif}
+    a{text-decoration:none;color:inherit}.top{background:var(--brown);color:#fff8ef;text-align:center;padding:9px 15px;font-size:11px;letter-spacing:1px}
+    header{position:sticky;top:0;z-index:30;background:rgba(251,241,228,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(178,122,50,.15)}
+    nav{max-width:1180px;margin:auto;padding:15px 22px;display:flex;justify-content:space-between;align-items:center}.brand{font:700 35px/0.75 "Cormorant Garamond",serif;color:var(--brown)}.brand small{display:block;font:500 9px Montserrat;letter-spacing:4px;text-align:center;margin-top:9px}
+    .links{display:flex;align-items:center;gap:24px;font-size:12px;font-weight:700}.links a:hover{color:var(--gold)}.pill{background:var(--gold);color:#fff;padding:12px 18px;border-radius:30px}
+    .hero{max-width:1180px;margin:auto;min-height:690px;padding:65px 22px;display:grid;grid-template-columns:1fr .92fr;gap:48px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:4px;color:var(--gold);font-size:11px;font-weight:700}
+    h1{font:700 82px/.78 "Cormorant Garamond",serif;color:var(--brown);margin:18px 0}.script{font:400 70px "Parisienne",cursive;color:var(--gold)}.hero p{max-width:580px;line-height:1.9;color:var(--muted);font-size:15px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.btn{border:0;cursor:pointer;border-radius:30px;padding:14px 21px;font-weight:700;font-size:12px}.primary{background:var(--gold);color:#fff;box-shadow:0 10px 25px rgba(178,122,50,.25)}.secondary{border:1px solid var(--gold);background:transparent;color:var(--brown)}
+    .hero-image{position:relative;border-radius:36px;overflow:hidden;box-shadow:var(--shadow);height:545px}.hero-image img{width:100%;height:100%;object-fit:cover;object-position:top}.hero-label{position:absolute;bottom:18px;left:18px;right:18px;background:rgba(255,250,244,.9);padding:15px;text-align:center;border-radius:16px;font-size:11px;letter-spacing:2px}
+    section{padding:80px 22px}.wrap{max-width:1180px;margin:auto}.title{text-align:center;margin-bottom:42px}.title span{font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:700;text-transform:uppercase}.title h2{font:600 58px/1 "Cormorant Garamond",serif;color:var(--brown);margin:10px 0}.title p{max-width:650px;margin:auto;color:var(--muted);font-size:13px;line-height:1.8}
+    .services{background:var(--paper)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:180px 1fr;min-height:205px;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.card img{width:100%;height:100%;object-fit:cover}.card-body{padding:20px}.num{font-size:10px;color:var(--gold);letter-spacing:2px;font-weight:700}.card h3{margin:6px 0 8px;font:700 24px/1 "Cormorant Garamond",serif;color:var(--brown)}.card p{font-size:11px;line-height:1.65;color:var(--muted);margin:0}.meta{display:flex;align-items:center;justify-content:space-between;margin-top:15px}.time{font-size:10px;color:#816d59}.price{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#fff;border-radius:20px;padding:8px 12px;font-size:11px;font-weight:800}
+    .reference{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;align-items:center}.reference img{width:100%;border-radius:28px;box-shadow:var(--shadow)}.reference-copy h2{font:600 60px/.9 "Cormorant Garamond",serif;color:var(--brown);margin:10px 0 18px}.reference-copy p{line-height:1.9;color:var(--muted);font-size:13px}
+    .booking{background:linear-gradient(145deg,#f8e9d6,#fff8ef)}.booking-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:38px}.booking-copy h2{font:600 64px/.9 "Cormorant Garamond",serif;color:var(--brown);margin:12px 0 20px}.booking-copy p{font-size:13px;line-height:1.9;color:var(--muted)}.note{border-left:3px solid var(--gold);padding:14px 15px;background:rgba(255,255,255,.55);font-size:11px;line-height:1.6;margin-top:22px}
+    form{background:#fffaf4;border:1px solid var(--line);padding:28px;border-radius:28px;box-shadow:var(--shadow)}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-size:10px;font-weight:700;color:var(--brown);margin:0 0 6px}input,select,textarea{width:100%;padding:13px;border:1px solid #dfc5a4;background:#fffdf9;border-radius:12px;font:inherit;font-size:12px;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--gold)}textarea{min-height:85px;resize:vertical}.full{grid-column:1/-1}.slots{margin-top:14px}.slots-title{font-size:10px;font-weight:700;color:var(--brown);margin-bottom:8px}.slot-grid{display:flex;flex-wrap:wrap;gap:7px}.slot{border:1px solid var(--line);background:#fff;border-radius:18px;padding:8px 11px;font-size:10px;cursor:pointer}.slot.selected{background:var(--gold);color:#fff;border-color:var(--gold)}.slot.busy{opacity:.35;cursor:not-allowed;text-decoration:line-through}.formbottom{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-top:18px}.hint{font-size:9px;color:#806b57;line-height:1.5}
+    .contact{background:var(--brown);color:#fff8ef}.contactgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}.contact h3{font:600 30px "Cormorant Garamond",serif;margin:5px}.contact p{font-size:11px;color:#e7d7c4;line-height:1.7}
+    footer{background:#3f2818;color:#ead9c6;text-align:center;padding:22px;font-size:10px}.modal{display:none;position:fixed;inset:0;background:rgba(55,34,18,.55);z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:#fffaf4;max-width:440px;width:100%;border-radius:24px;padding:30px;text-align:center;box-shadow:var(--shadow)}.modalbox h3{font:600 36px "Cormorant Garamond",serif;color:var(--brown);margin:5px}.modalbox p{font-size:12px;line-height:1.7;color:var(--muted)}.close{border:0;background:transparent;font-size:22px;float:right;cursor:pointer}
+    @media(max-width:900px){.hero,.reference,.booking-grid{grid-template-columns:1fr}.hero-image{height:460px}.grid{grid-template-columns:1fr}.card{grid-template-columns:160px 1fr}.contactgrid{grid-template-columns:1fr}.links a:not(.pill){display:none}}
+    @media(max-width:560px){section{padding:58px 15px}.hero{padding:45px 15px}.hero h1{font-size:62px}.script{font-size:54px}.hero-image{height:390px}.card{grid-template-columns:115px 1fr}.card h3{font-size:21px}.card-body{padding:15px}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.formbottom{flex-direction:column;align-items:stretch}.title h2{font-size:47px}.reference-copy h2,.booking-copy h2{font-size:50px}}
+  .paymentbox{margin-top:16px;padding:15px;border:1px solid var(--line);border-radius:15px;background:#fff}.deposit-title{font-size:12px;font-weight:700;color:var(--brown)}.deposit-title strong{font-size:18px;color:var(--gold)}.payment-note{font-size:10px;color:#806b57;margin-top:4px}.paymentbox{margin-top:16px;padding:15px;border:1px solid var(--line);border-radius:15px;background:#fff}.deposit-title{font-size:12px;font-weight:700;color:var(--brown)}.deposit-title strong{font-size:18px;color:var(--gold)}.payment-note{font-size:10px;color:#806b57;margin-top:4px}</style>
+</head>
+<body>
+  <div class="top">✨ ATENCIÓN PERSONALIZADA · SERVICIOS A DOMICILIO PREVIA COORDINACIÓN</div>
+  <header><nav>
+    <a class="brand" href="#">arijewel<small>STUDIO BEAUTY</small></a>
+    <div class="links"><a href="#servicios">Servicios</a><a href="#menu">Menú</a><a href="#reservar">Reservar</a><a href="#contacto">Contacto</a><a class="pill" href="#reservar">Agendar cita</a></div>
+  </nav></header>
+
+  <main>
+    <section id="inicio"><div class="hero">
+      <div>
+        <div class="eyebrow">Realza tu belleza natural</div>
+        <h1>Tu piel,<br><span class="script">tu momento</span></h1>
+        <p>Un espacio dedicado al cuidado facial y a la belleza natural. Elige tu tratamiento, revisa los horarios disponibles y solicita tu cita en línea.</p>
+        <div class="buttons"><a class="btn primary" href="#reservar">Reservar mi cita</a><a class="btn secondary" href="#servicios">Ver tratamientos</a></div>
+      </div>
+      <div class="hero-image"><img src="/assets/menu-facial-referencia.jpg" alt="Arijewel Studio Beauty — menú facial"><div class="hero-label">PIEL SANA · PIEL BONITA · PIEL FELIZ</div></div>
+    </div></section>
+
+    <section class="services" id="servicios"><div class="wrap">
+      <div class="title"><span>Menú facial</span><h2>Tratamientos para ti</h2><p>Los precios de esta web ya incluyen los S/10 adicionales que solicitaste sobre el menú de referencia.</p></div>
+      <div class="grid" id="serviceGrid"></div>
+    </div></section>
+
+    <section id="menu"><div class="wrap reference">
+      <div><img src="/assets/menu-facial-referencia.jpg" alt="Menú facial de referencia de Arijewel"></div>
+      <div class="reference-copy"><div class="eyebrow">Tu piel, nuestra prioridad</div><h2>El mismo estilo, ahora convertido en una web.</h2><p>Usamos tu diseño como referencia visual: tonos crema, dorado, tipografía elegante, detalles botánicos y las imágenes de tus seis tratamientos. Así la página mantiene la identidad de Arijewel en lugar de verse como una plantilla genérica.</p><div class="buttons"><a class="btn primary" href="#reservar">Quiero reservar</a></div></div>
+    </div></section>
+
+    <section class="booking" id="reservar"><div class="wrap booking-grid">
+      <div class="booking-copy"><div class="eyebrow">Reservas online</div><h2>Separa tu cita.</h2><p>Elige un servicio, una fecha y uno de los horarios libres. La página guarda la solicitud en una base de datos y evita que dos personas reserven el mismo horario.</p><div class="note"><strong>Confirmación:</strong> la solicitud queda registrada como pendiente. Puedes confirmarla desde el panel de administración y luego coordinar el adelanto o pago por WhatsApp.</div></div>
+      <form id="bookingForm">
+        <div class="formgrid">
+          <div><label>Nombre completo *</label><input id="name" required placeholder="Tu nombre"></div>
+          <div><label>Celular *</label><input id="phone" required type="tel" placeholder="999 999 999"></div>
+          <div><label>Servicio *</label><select id="service" required><option value="">Cargando...</option></select></div>
+          <div><label>Modalidad *</label><select id="mode" required><option value="">Selecciona</option><option>En estudio</option><option>A domicilio</option></select></div>
+          <div><label>Fecha *</label><input id="date" required type="date"></div>
+          <div><label>Hora *</label><select id="time" required><option value="">Primero elige fecha</option></select></div>
+          <div class="full"><label>Notas / separación</label><textarea id="notes" placeholder="Ej. Deseo separar con adelanto o tengo una consulta sobre el tratamiento."></textarea></div>
+        </div>
+        <div class="formbottom"><div class="hint">📅 Los horarios ocupados se bloquean automáticamente.</div><button class="btn primary" type="submit">Confirmar solicitud</button></div>
+      </form>
+    </div></section>
+
+    <section class="contact" id="contacto"><div class="wrap contactgrid">
+      <div><div>♡</div><h3>Arijewel</h3><p>Studio Beauty<br>Realza tu belleza natural</p></div>
+      <div><div>◌</div><h3>WhatsApp</h3><p>930 774 397<br>Consultas y reservas</p></div>
+      <div><div>⌂</div><h3>A domicilio</h3><p>Previa coordinación<br>Consulta disponibilidad</p></div>
+    </div></section>
+  </main>
+
+  <footer>© 2026 arijewel Studio Beauty · Piel sana · Piel bonita · Piel feliz</footer>
+
+  <div class="modal" id="successModal"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div style="font-size:38px">✨</div><h3>Solicitud recibida</h3><p id="successText"></p><a class="btn primary" id="waLink" target="_blank">Continuar por WhatsApp</a></div></div>
+
+<script>
+const WHATSAPP="51930774397";
+const slots=["09:00","10:30","12:00","14:00","15:30","17:00","18:30"];
+let services=[];
+const serviceGrid=document.getElementById("serviceGrid");
+const serviceSelect=document.getElementById("service");
+const dateInput=document.getElementById("date");
+const timeSelect=document.getElementById("time");
+const depositAmount=document.getElementById("depositAmount");
+
+const d=new Date(); d.setHours(0,0,0,0);
+dateInput.min=d.toISOString().slice(0,10);
+
+async function loadServices(){
+  services=await fetch("/api/services").then(r=>r.json());
+  serviceGrid.innerHTML=services.map((s,i)=>`
+  <article class="service">
+    <div class="service-num">0${i+1}</div><div>
+      <h3>${s.name}</h3><p>${s.description}</p>
+      <div class="meta"><span class="time">◷ ${s.duration}</span>
+      <span class="price">${s.name==="Facial Peeling"?"Desde ":""}S/ ${s.price}</span></div>
+    </div>
+  </article>`).join("");
+  serviceSelect.innerHTML='<option value="">Selecciona un servicio</option>'+
+    services.map(s=>`<option value="${s.id}">${s.name} — S/ ${s.price}</option>`).join("");
+}
+serviceSelect.addEventListener("change",()=>{
+  const s=services.find(x=>x.id===Number(serviceSelect.value));
+  depositAmount.textContent=s?`S/ ${(Number(s.price)*0.5).toFixed(2)}`:"S/ 0.00";
+});
+
+async function loadTimes(){
+  if(!dateInput.value){timeSelect.innerHTML='<option value="">Primero elige fecha</option>';return}
+  const data=await fetch("/api/availability?date="+encodeURIComponent(dateInput.value)).then(r=>r.json());
+  timeSelect.innerHTML='<option value="">Selecciona una hora</option>';
+  slots.forEach(t=>{
+    const o=document.createElement("option");
+    o.value=t;o.textContent=data.booked.includes(t)?`${t} — ocupado`:t;
+    o.disabled=data.booked.includes(t);timeSelect.appendChild(o);
+  });
+}
+dateInput.addEventListener("change",loadTimes);
+
+document.getElementById("bookingForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const payload={
+    name:document.getElementById("name").value.trim(),
+    phone:document.getElementById("phone").value.trim(),
+    serviceId:Number(serviceSelect.value),
+    mode:document.getElementById("mode").value,
+    date:dateInput.value,time:timeSelect.value,
+    notes:document.getElementById("notes").value.trim()
+  };
+  const r=await fetch("/api/bookings",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+  const data=await r.json();
+  if(!r.ok){alert(data.error||"No se pudo registrar la cita.");await loadTimes();return}
+
+  const s=services.find(x=>x.id===payload.serviceId);
+  const deposit=(Number(s.price)*0.5).toFixed(2);
+  const message=`✨ *SOLICITUD DE CITA — ARIJEWEL STUDIO BEAUTY*
+
+👤 Nombre: ${payload.name}
+📱 Celular: ${payload.phone}
+✨ Servicio: ${s.name}
+💰 Precio: S/ ${s.price}
+💳 Separación 50%: S/ ${deposit}
+📍 Modalidad: ${payload.mode}
+📅 Fecha: ${payload.date.split("-").reverse().join("/")}
+⏰ Hora: ${payload.time}
+📝 Notas: ${payload.notes||"Sin notas"}`;
+
+  const paymentArea=document.getElementById("paymentArea");
+  paymentArea.innerHTML="";
+  document.getElementById("successText").textContent=
+    `Reserva #${data.id}. La separación requerida es S/ ${deposit} (50%).`;
+  document.getElementById("waLink").href=
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
+
+  const cfg=await fetch("/api/payment-config").then(r=>r.json()).catch(()=>({ready:false}));
+  if(cfg.ready){
+    const button=document.createElement("button");
+    button.className="btn btn-primary";
+    button.textContent=`Pagar separación S/ ${deposit}`;
+    button.onclick=()=>startPayment(data.id,Number(deposit));
+    paymentArea.appendChild(button);
+    const note=document.createElement("p");
+    note.className="small";
+    note.textContent="El checkout mostrará los medios de pago habilitados en tu cuenta de Culqi.";
+    paymentArea.appendChild(note);
+  }else{
+    paymentArea.innerHTML="<p class='small'>El pago online quedará disponible al configurar las llaves de Culqi del negocio.</p>";
+  }
+
+  document.getElementById("successModal").classList.add("show");
+  e.target.reset();depositAmount.textContent="S/ 0.00";
+  timeSelect.innerHTML='<option value="">Primero elige fecha</option>';
+});
+
+async function startPayment(bookingId,amount){
+  const cfg=await fetch("/api/payment-config").then(r=>r.json());
+  if(!cfg.ready){alert("Culqi todavía no está configurado.");return}
+  Culqi.publicKey=cfg.publicKey;
+  Culqi.settings({title:"Arijewel Studio Beauty",currency:"PEN",amount:Math.round(amount*100)});
+  Culqi.options({
+    lang:"auto",installments:false,modal:true,
+    paymentMethods:{tarjeta:true,yape:true,billetera:true,bancaMovil:true,agente:true,cuotealo:false}
+  });
+  window.__bookingId=bookingId;
+  Culqi.open();
+}
+
+window.culqi=async function(){
+  if(Culqi.token){
+    const email=prompt("Ingresa tu correo para procesar el pago:");
+    if(!email)return;
+    const r=await fetch("/api/payments/charge",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({bookingId:window.__bookingId,tokenId:Culqi.token.id,email})
+    });
+    const data=await r.json();
+    if(r.ok){
+      document.getElementById("paymentArea").innerHTML=
+        "<p style='color:#2e7d4f;font-weight:700'>✓ Separación pagada correctamente.</p>";
+    }else alert(data.error||"No se pudo completar el pago.");
+  }else if(Culqi.error){
+    alert(Culqi.error.user_message||"No se pudo procesar el pago.");
+  }
+}
+function closeModal(){document.getElementById("successModal").classList.remove("show")}
+loadServices();
+</script>
+</body>
+</html>
